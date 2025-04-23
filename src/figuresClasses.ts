@@ -13,10 +13,10 @@ export class Triangle implements Figure {
     public b: number,
     public c: number
   ) {
-    if (a <= 0 || b <= 0 || c <= 0) {
+    if (this.a <= 0 || this.b <= 0 || this.c <= 0) {
       throw new Error('Сторони мають бути більше нуля');
     }
-    if (a + b <= c || a + c <= b || b + c <= a) {
+    if (this.a + this.b <= this.c || this.a + this.c <= this.b || this.b + this.c <= this.a) {
       throw new Error('Неправильні сторони для трикутника');
     }
   }
@@ -34,7 +34,7 @@ export class Circle implements Figure {
     public color: 'red' | 'green' | 'blue',
     public radius: number
   ) {
-    if (radius <= 0) {
+    if (this.radius <= 0) {
       throw new Error('Радіус має бути більше нуля');
     }
   }
@@ -52,7 +52,7 @@ export class Rectangle implements Figure {
     public width: number,
     public height: number
   ) {
-    if (width <= 0 || height <= 0) {
+    if (this.width <= 0 || this.height <= 0) {
       throw new Error('Ширина і висота мають бути більше нуля');
     }
   }
